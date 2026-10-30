@@ -1,4 +1,10 @@
-# Pluto skills
+<p align="center">
+  <img src="https://raw.githubusercontent.com/plutoframework/pluto/main/assets/readme/banner.svg" alt="Pluto — a small framework, wide open possibilities" width="100%" />
+</p>
+
+# Pluto Skills
+
+[Website](https://plutoframework.github.io/pluto-site/) · [Documentation](https://plutoframework.github.io/pluto-site/docs/ai-skills/) · [CLI demo](https://github.com/plutoframework/pluto/blob/main/docs/DEMO.md) · [First issues](https://github.com/plutoframework/pluto/blob/main/CONTRIBUTING.md#starter-tasks)
 
 Short, task-specific guidance for agents building with the Pluto ecosystem.
 Each skill contains do/don’t bullets and links to canonical Markdown docs.
@@ -26,14 +32,14 @@ See the [skills CLI](https://github.com/vercel-labs/skills) for supported agents
 
 ## Choose guidance
 
-| Skill | Use it for |
-| --- | --- |
-| pluto-project | Initialization, config and upgrades |
-| pluto-api | Endpoints, operations and domain state |
-| pluto-security | Authentication, permissions, tenants and flags |
-| pluto-data | SQL, pagination, idempotency, jobs and cache |
-| pluto-frontend | React, UI libraries, themes, registries and UI state |
-| pluto-agents | AI runs, tools and execution authority |
+| Skill            | Use it for                                                         |
+| ---------------- | ------------------------------------------------------------------ |
+| pluto-project    | Initialization, config and upgrades                                |
+| pluto-api        | Endpoints, operations and domain state                             |
+| pluto-security   | Authentication, permissions, tenants and flags                     |
+| pluto-data       | SQL, pagination, idempotency, jobs and cache                       |
+| pluto-frontend   | React, UI libraries, themes, registries and UI state               |
+| pluto-agents     | AI runs, tools and execution authority                             |
 | pluto-maintainer | Framework changes, experience improvements and security validation |
 
 The maintainer skill includes focused implementation, experience and security
