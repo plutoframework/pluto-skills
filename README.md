@@ -19,8 +19,8 @@ default; add `-g` for a user-wide installation. Install one skill explicitly:
 npx skills add plutoframework/pluto-skills --skill pluto-api -a codex
 ```
 
-Pin this collection to a release with 
-`https://github.com/plutoframework/pluto-skills/tree/v0.1.1`.
+Pin this collection to a release with
+`https://github.com/plutoframework/pluto-skills/tree/v0.2.0`.
 Use `npx skills check` to inspect updates and `npx skills update` to apply them.
 See the [skills CLI](https://github.com/vercel-labs/skills) for supported agents.
 
@@ -34,6 +34,10 @@ See the [skills CLI](https://github.com/vercel-labs/skills) for supported agents
 | pluto-data | SQL, pagination, idempotency, jobs and cache |
 | pluto-frontend | React, UI libraries, themes, registries and UI state |
 | pluto-agents | AI runs, tools and execution authority |
+| pluto-maintainer | Framework changes, experience improvements and security validation |
+
+The maintainer skill includes focused implementation, experience and security
+references. Load only the reference needed for the task.
 
 Existing project instructions and explicit user choices govern the task.
 Installing a skill does not authorize publishing, deployment or paid API calls.
