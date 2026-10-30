@@ -4,7 +4,8 @@
 
 - Start from the user task and acceptance criteria; preserve the application's chosen UI library, theme tokens and feature structure.
 - Use supported CLI generators for application components. Fix the generator when every new component would inherit the defect.
-- Test loading, empty, error, success and permission/flag-disabled states relevant to the change.
+- Test loading, empty, error, success and permission/flag-disabled states relevant to the change. Hold write responses open to verify immediate feedback, duplicate protection and preserved input.
+- Default generated actions to pending confirmation; make optimism explicit. Test concurrent projections, uncertain commit outcomes and old-scope completion. Confirmed writes must not wait for background refresh or become failures when refresh fails.
 - Verify keyboard navigation, focus, labels, validation feedback, contrast, reduced motion and narrow layouts where affected.
 - Inspect the rendered result and real interactions; compilation and screenshots alone do not prove a flow works.
 - Keep transport/auth details out of presentation components. Client visibility never replaces server enforcement.

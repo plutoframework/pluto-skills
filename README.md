@@ -20,7 +20,7 @@ npx skills add plutoframework/pluto-skills --skill pluto-api -a codex
 ```
 
 Pin this collection to a release with
-`https://github.com/plutoframework/pluto-skills/tree/v0.2.0`.
+`https://github.com/plutoframework/pluto-skills/tree/v0.2.1`.
 Use `npx skills check` to inspect updates and `npx skills update` to apply them.
 See the [skills CLI](https://github.com/vercel-labs/skills) for supported agents.
 
