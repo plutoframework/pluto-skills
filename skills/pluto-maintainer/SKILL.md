@@ -20,8 +20,11 @@ description: Maintain Pluto libraries, generators, examples and documentation. U
 - Gate unfinished/staged application behavior off by default; test both states. Flags cannot make unsafe migrations or broken public contracts safe to merge.
 - Run repository formatters, linters and required checks after the final edit. Report failures, skips and untested boundaries accurately.
 
+- Lead docs with real application wiring; keep simulations in labeled testing sections.
+
 ## Read for the task
 
+- [Documentation authoring](https://plutoframework.github.io/pluto-site/docs/maintainers/documentation.md): realistic examples, source checks and publishing.
 - [Implementation](references/implementation.md): bugs, features, generator and release validation.
 - [Experience](references/experience.md): UI/UX, DX and agent ergonomics.
 - [Security](references/security.md): trust boundaries, safe reproduction and evidence.

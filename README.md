@@ -26,7 +26,7 @@ npx skills add plutoframework/pluto-skills --skill pluto-api -a codex
 ```
 
 Pin this collection to a release with
-`https://github.com/plutoframework/pluto-skills/tree/v0.2.1`.
+`https://github.com/plutoframework/pluto-skills/tree/v0.3.0`.
 Use `npx skills check` to inspect updates and `npx skills update` to apply them.
 See the [skills CLI](https://github.com/vercel-labs/skills) for supported agents.
 
@@ -40,6 +40,7 @@ See the [skills CLI](https://github.com/vercel-labs/skills) for supported agents
 | pluto-data       | SQL, pagination, idempotency, jobs and cache                       |
 | pluto-frontend   | React, UI libraries, themes, registries and UI state               |
 | pluto-agents     | AI runs, tools and execution authority                             |
+| pluto-docs       | READMEs, guides, realistic examples and documentation checks       |
 | pluto-maintainer | Framework changes, experience improvements and security validation |
 
 The maintainer skill includes focused implementation, experience and security
