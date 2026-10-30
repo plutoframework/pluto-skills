@@ -8,13 +8,23 @@ description: Initialize and configure Pluto applications using the CLI and pluto
 ## Do
 
 - Read `pluto.toml`, local agent instructions and `pluto version` before changing a project.
-- Use explicit CLI arguments with `--no-input`; inspect command help and `--dry-run` before generation.
-- Persist generator choices in `pluto.toml`; load runtime secrets through the configured environment or secret provider.
+- Use the CLI for project/frontend initialization, endpoints, jobs, agents, state machines, components and auth UI. Inspect help/`--dry-run`; use explicit arguments with `--no-input`.
+- Generate first; implement business logic in authored extension points. Edit manifest-owned metadata in `pluto.toml`, then regenerate.
+- Persist generator choices in `pluto.toml`; load secrets through the configured environment/provider.
 - Keep the application environment prefix explicit, uppercase and scoped to the app.
-- Run `pluto fmt`, `pluto vet` and the relevant project checks after changes.
+- After the final edit, run `pluto fmt`, `pluto vet` and relevant tests. For frontend edits, run its format/lint/check scripts. Fix findings; rerun affected checks.
+- Report checks run, failures and missing tools. Do not claim incomplete validation passed.
+
+## Feature rollout
+
+- Gate unfinished/staged capabilities behind declared, default-off flags before merging. Routine fixes/refactors need no flag unless rollout requires one.
+- Use `pluto add endpoint ... --feature <key>` for gated routes; add `--feature-client-visible` only when needed by UI. Use Core evaluation inside operations.
+- Gate server behavior before side effects; retain authorization. Test both states, including no new effects while disabled. Define when to remove the flag.
 
 ## Don't
 
+- Do not hand-create supported scaffolds or patch generated output to bypass the CLI. Resolve/report missing or failing tooling; use documented extension points for unsupported work.
+- Do not suppress lint rules, shrink tests or skip checks to make a change pass.
 - Do not overwrite authored files or migrate old scaffold schemas implicitly.
 - Do not commit real secrets or assume generated development integrations are production-ready.
 - Do not add dependencies when an existing Pluto primitive covers the need.
@@ -25,4 +35,5 @@ Read only the topic needed; match examples to the installed package version.
 
 - [Setup](https://plutoframework.github.io/pluto-site/docs/getting-started.md)
 - [Configuration](https://plutoframework.github.io/pluto-site/docs/configuration.md)
+- [Feature flags](https://plutoframework.github.io/pluto-site/docs/backend/features.md)
 - [Commands](https://plutoframework.github.io/pluto-site/docs/cli/reference.md)

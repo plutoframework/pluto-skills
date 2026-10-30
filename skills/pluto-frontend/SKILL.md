@@ -7,12 +7,13 @@ description: Build Pluto React features using configured UI libraries, TOML them
 
 ## Do
 
-- Read the frontend profile in `pluto.toml`; use `pluto frontend` commands and the selected UI adapter.
+- Read the frontend profile in `pluto.toml`. Use `pluto frontend init` and supported `pluto frontend add` commands for components/auth UI; do not hand-recreate their scaffolds. Use the selected UI adapter and documented extension points.
 - Keep feature code together and cross feature boundaries through `public.ts`; put network access in feature query/mutation adapters.
 - Keep shared theme tokens in TOML and authored CSS overrides in the designated stylesheet; regenerate managed theme output.
+- Hide unfinished/staged UI with declared client-visible flags; retain backend feature and permission enforcement and test both flag states.
 - Use `@plutoframework/frontend/state` for pure UI transitions and `/react` for subscriptions.
 - Own controller creation/reset/disposal in the host lifecycle; abort and fence stale work when actor, tenant or resource changes.
-- Run `npm run fmt`, `npm run lint` and relevant frontend checks. Preserve expanded blocks, logical spacing and blank lines above standalone comments except at file line one.
+- After the final edit, run `npm run fmt`, `npm run lint` and the configured frontend checks; fix findings and rerun affected checks. Report missing tools/failures instead of suppressing rules. Preserve expanded blocks, logical spacing and blank lines above standalone comments except at file line one.
 
 ## Don't
 
