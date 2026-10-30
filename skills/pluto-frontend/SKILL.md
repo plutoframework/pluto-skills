@@ -1,0 +1,31 @@
+---
+name: pluto-frontend
+description: Build Pluto React features using configured UI libraries, TOML themes, component registries and typed UI state. Use for frontend scaffolding or behavior changes.
+---
+
+# pluto-frontend
+
+## Do
+
+- Read the frontend profile in `pluto.toml`; use `pluto frontend` commands and the selected UI adapter.
+- Keep feature code together and cross feature boundaries through `public.ts`; put network access in feature query/mutation adapters.
+- Keep shared theme tokens in TOML and authored CSS overrides in the designated stylesheet; regenerate managed theme output.
+- Use `@plutoframework/frontend/state` for pure UI transitions and `/react` for subscriptions.
+- Own controller creation/reset/disposal in the host lifecycle; abort and fence stale work when actor, tenant or resource changes.
+- Run `npm run fmt`, `npm run lint` and relevant frontend checks. Preserve expanded blocks, logical spacing and blank lines above standalone comments except at file line one.
+
+## Don't
+
+- Do not hand-edit generated API/theme artifacts, import feature internals or bypass the configured UI library.
+- Do not confuse UI state/request IDs with backend domain state/idempotency keys.
+- Do not use client state for authorization or share controllers across server-rendered users.
+- Do not assume `useMachine` disposes the controller; it only subscribes.
+
+## Docs
+
+Read only the topic needed; match examples to the installed package version.
+
+- [Frontend conventions](https://plutoframework.github.io/pluto-site/docs/frontend/profiles.md)
+- [Themes](https://plutoframework.github.io/pluto-site/docs/frontend/themes.md)
+- [Custom components](https://plutoframework.github.io/pluto-site/docs/frontend/registries.md)
+- [UI state](https://plutoframework.github.io/pluto-site/docs/frontend/state.md)
