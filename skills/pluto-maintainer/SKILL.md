@@ -20,7 +20,8 @@ description: Maintain Pluto libraries, generators, examples and documentation. U
 - Gate unfinished/staged application behavior off by default; test both states. Flags cannot make unsafe migrations or broken public contracts safe to merge.
 - After the final edit in a library repository, run `make fmt`, then `make vet`, and `make check` for the standard checks and tests. Where these targets are unavailable, use the repository's documented formatter, linter and test commands. `pluto fmt` and `pluto vet` are application commands, not library checks. Fix findings and rerun affected checks; report failures, skips and untested boundaries accurately.
 
-- Lead docs with real application wiring; keep simulations in labeled testing sections.
+- Reflect public behavior changes in the product docs on `pluto-site`, including package-owned snapshot sources; repository docs alone are insufficient. Follow the documentation authoring guide for ownership and refresh steps. Report blocked site work explicitly.
+- Update existing docs first. Keep work plans, summaries and test evidence in the conversation or PR; add Markdown only for a lasting reader need or explicit request. Lead examples with real wiring.
 
 ## Read for the task
 
