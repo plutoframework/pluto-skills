@@ -18,7 +18,7 @@ description: Maintain Pluto libraries, generators, examples and documentation. U
 - Use the CLI for supported application scaffolding. Maintainers edit generator source/templates directly, then rebuild and exercise the CLI; do not patch generated output to hide generator defects.
 - Preserve compatibility and secure defaults. Declare breaking changes, dependency costs and migration needs explicitly.
 - Gate unfinished/staged application behavior off by default; test both states. Flags cannot make unsafe migrations or broken public contracts safe to merge.
-- Run repository formatters, linters and required checks after the final edit. Report failures, skips and untested boundaries accurately.
+- After the final edit in a library repository, run `make fmt`, then `make vet`, and `make check` for the standard checks and tests. Where these targets are unavailable, use the repository's documented formatter, linter and test commands. `pluto fmt` and `pluto vet` are application commands, not library checks. Fix findings and rerun affected checks; report failures, skips and untested boundaries accurately.
 
 - Lead docs with real application wiring; keep simulations in labeled testing sections.
 
