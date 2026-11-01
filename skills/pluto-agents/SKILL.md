@@ -9,7 +9,7 @@ description: Build typed Pluto Agent runs and tools with verified dependencies a
 
 - Use typed run dependencies for verified identity, tenant scope and application services.
 - Register tools explicitly; narrow the allowed tool set per run and enforce policy at the execution boundary.
-- Bind tools to declared managed operations. Tool adapters decode typed inputs and call the same gate used by HTTP/workers; private authored operation code owns orchestration. Do not add an alternate business `Handle` callback or reproduce gate logic in a tool.
+- Bind tools to declared managed operations. Tool adapters decode typed inputs and call the same gate used by HTTP/workers; operation code owns orchestration, with candidate workflows derived from managed declarations. Do not add an alternate business `Handle` callback or reproduce gate logic in a tool.
 - Obtain caller/delegation evidence from the supported verifier and exact trusted issuer. A model-supplied actor, tenant, resource label or copied role snapshot cannot create authority.
 - Wrap external API tools in the same permission/resource boundaries; keep destinations and credentials server-controlled.
 - Candidate write tools require host-owned approval and operation idempotency. Bind the approved intent to the exact identity, gate, resource and normalized input/key; model arguments cannot issue or widen that approval.
