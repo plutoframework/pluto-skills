@@ -46,6 +46,10 @@
   files when touching generation.
 - Format, lint, compile and test generated consumers; check OpenAPI/schema/theme
   freshness where affected.
+- Treat templates, embedded source strings and `.go.txt`/`.tmpl` fixtures as
+  authored code. Check their layout explicitly and inspect rendered source
+  before generated-file exclusions can hide it. Running the root formatter
+  alone does not establish coverage of these source classes.
 - Follow repository-required race, bounded fuzz, mutation and real-service
   checks. Count skips separately; surviving mutants need explanation, never a
   manufactured pass.
