@@ -25,7 +25,7 @@ description: Implement Pluto persistence, pagination, idempotency, jobs and cach
 - Do not use a cursor, cache entry or idempotency key as authorization.
 - Do not claim generic HTTP replay capture is atomic with the business write, or jobs provide exactly-once delivery.
 - Do not use memory stores as durable production storage or silently retry uncertain writes without reconciliation.
-- Do not make a cache authoritative for sessions, permissions or business correctness.
+- Reload lifecycle guard facts from authoritative persistence, even on a same-version display cache hit. Never make caches authoritative for sessions or permissions.
 - Do not count a skipped database case, build failure, missing test or unrelated error as negative proof. Require the expected business assertion and an allowed positive control.
 
 ## Docs

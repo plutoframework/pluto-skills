@@ -12,7 +12,7 @@ description: Build typed Pluto Agent runs and tools with verified dependencies a
 - Bind tools to declared managed operations. Tool adapters decode typed inputs and call the same gate used by HTTP/workers; private authored operation code owns orchestration. Do not add an alternate business `Handle` callback or reproduce gate logic in a tool.
 - Obtain caller/delegation evidence from the supported verifier and exact trusted issuer. A model-supplied actor, tenant, resource label or copied role snapshot cannot create authority.
 - Wrap external API tools in the same permission/resource boundaries; keep destinations and credentials server-controlled.
-- Require host-owned approval and idempotency for writes where the application policy demands them.
+- Candidate write tools require host-owned approval and operation idempotency. Bind the approved intent to the exact identity, gate, resource and normalized input/key; model arguments cannot issue or widen that approval.
 - Test with scripted providers and HTTP mocks first; verify denied runs make zero external calls.
 - Exercise direct tool invocation, mismatched/expired authority and restricted writes after the run ends. A tool-level permission check does not replace resource policy or the operation's required gate.
 
