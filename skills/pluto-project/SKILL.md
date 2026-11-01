@@ -9,17 +9,17 @@ description: Initialize and configure Pluto applications using the CLI and pluto
 
 - Read `pluto.toml`, local agent instructions and `pluto version` before changing a project.
 - Use the CLI for project/frontend initialization, endpoints, jobs, agents, state machines, components and auth UI. Inspect help/`--dry-run`; use explicit arguments with `--no-input`.
-- Generate first; implement business logic in authored extension points. Edit manifest-owned metadata in `pluto.toml`, then regenerate.
+- Generate first; use supported authored extension points. Candidate blueprints own domain rules and operations; unsupported hooks require framework changes. Edit manifest-owned metadata in `pluto.toml`, then regenerate.
 - Declare operation authority and behavior before choosing its HTTP, worker or tool entry. Use the installed CLI's supported references; unsupported contracts require an explicit framework upgrade, not a handwritten alternate gate.
 - Persist generator choices in `pluto.toml`; load secrets through the configured environment/provider.
 - Keep the application environment prefix explicit, uppercase and scoped to the app.
-- After the final edit, run `pluto fmt`, `pluto vet` and relevant tests. For frontend edits, run its format/lint/check scripts. Fix findings; rerun affected checks.
+- After the final edit, run `pluto fmt`, `pluto openapi` when contracts change, `pluto vet` and relevant tests. For frontend edits, run its format/lint/check scripts. Fix findings; rerun affected checks.
 - Report checks run, failures and missing tools. Do not claim incomplete validation passed.
 
 ## Feature rollout
 
 - Gate unfinished/staged capabilities behind declared, default-off flags before merging. Routine fixes/refactors need no flag unless rollout requires one.
-- Use `pluto add endpoint ... --feature <key>` for gated routes; add `--feature-client-visible` only when needed by UI. Use Core evaluation inside operations.
+- Where supported, use `pluto add endpoint ... --feature <key>`; add `--feature-client-visible` only when needed. The candidate profile rejects route-only flags pending shared operation contracts.
 - Gate server behavior before side effects; retain authorization. Test both states, including no new effects while disabled. Define when to remove the flag.
 
 ## Don't
