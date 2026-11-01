@@ -30,6 +30,20 @@
 
 ## Deliver
 
+- Use the [architecture enforcement map](https://plutoframework.github.io/pluto-site/docs/architecture.md):
+  domain values and lifecycle, operation identity/resource policy, scoped
+  data/query/cache, atomic commit and typed delivery each need an owning API,
+  canonical check and runtime proof. Skills explain that path; they cannot
+  compensate for an optional enforcement mechanism.
+- Preserve a frozen negative consumer while repairing upstream tools. Pin its
+  revision and contents, require the specific expected findings and reject
+  unrelated failures. Do not rewrite the consumer or its checks to manufacture
+  a pass. Migrate only after the required upstream coverage is demonstrated.
+- Test installed and candidate versions explicitly. Candidate local replacements
+  must not be presented as released dependency compatibility. Unsupported
+  required contracts must fail the compliance gate, even if draft scaffolding
+  can still compile.
+
 - Update relevant docs, templates and examples within authorized scope; report follow-ups outside it.
 - For authorized releases, use module-specific tags, correct pins and existing pipelines. Verify installation with published dependencies, normal checksums and no local replacements.
 - Report behavior changed, evidence, compatibility/migrations and material limits. Keep unrelated working-tree edits and secrets out of commits.

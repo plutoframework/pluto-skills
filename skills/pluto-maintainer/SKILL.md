@@ -14,9 +14,9 @@ description: Maintain Pluto libraries, generators, examples and documentation. U
 ## Do
 
 - Read the target repository's `AGENTS.md`, checks, published API and relevant docs. Identify affected modules, generators and consumers before editing; change only authorized repositories.
-- Reproduce the problem or define observable acceptance criteria. Fix the owning layer, then verify the real consumer path.
+- Trace each violation to its introduction and missed check. Fix the owner; prove intended rejection, a nearby bypass and an allowed consumer.
 - Use the CLI for supported application scaffolding. Maintainers edit generator source/templates directly, then rebuild and exercise the CLI; do not patch generated output to hide generator defects.
-- Preserve compatibility and secure defaults. Declare breaking changes, dependency costs and migration needs explicitly.
+- Assign compiler, canonical-check, runtime/database and skill obligations. Declare compatibility, dependency costs and migration requirements.
 - Gate unfinished/staged application behavior off by default; test both states. Flags cannot make unsafe migrations or broken public contracts safe to merge.
 - After the final edit in a library repository, run `make fmt`, then `make vet`, and `make check` for the standard checks and tests. Where these targets are unavailable, use the repository's documented formatter, linter and test commands. `pluto fmt` and `pluto vet` are application commands, not library checks. Fix findings and rerun affected checks; report failures, skips and untested boundaries accurately.
 
