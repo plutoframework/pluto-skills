@@ -7,7 +7,7 @@ description: Integrate Pluto authentication, RBAC, tenant checks and feature fla
 
 ## Do
 
-- Derive identity and tenant scope from verified server-side authentication.
+- Derive identity from the configured authentication issuer; verify the selected tenant against current server-side membership before creating scoped execution.
 - Use the supported identity issuer and bind evidence to that exact issuer. A private type with a public strings-only constructor is not verified authority; reject zero, foreign, expired and revoked evidence.
 - Check permissions and resource/tenant ownership in application operations, including calls made outside HTTP.
 - Require the same declared gate for HTTP, worker and tool calls. Resource policy is separate from capability permission and must bind the actual resource. Revalidate at restricted writes where the contract requires it.

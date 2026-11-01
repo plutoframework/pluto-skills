@@ -14,6 +14,7 @@ description: Implement Pluto persistence, pagination, idempotency, jobs and cach
 - Use Core bounded pagination and bind cursors to the query context.
 - Apply resource visibility and tenant predicates in the query before pagination. Exports use an explicit bound and the same visibility contract; filtering an unrestricted page afterward is incorrect.
 - Use the same-transaction idempotency API when a business write and replay completion must be atomic.
+- Authorize replay responses too. Bind claims to actor, tenant, operation and request fingerprint; reconcile retained pending claims and uncertain commits before retrying.
 - Make job handlers safe under at-least-once delivery; scope cache keys by app, environment and tenant.
 - Authorize before every cache access, including hits. Keep key/TTL/loading mechanics in a scoped data adapter; operations receive its restricted port. Cache invalidation and object delivery are not database rollback guarantees.
 - Validate and normalize domain values once at controlled constructors. Define typed effect payloads; enqueue declared delivery with the mutation and bound retries at the worker.

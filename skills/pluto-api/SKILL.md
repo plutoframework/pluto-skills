@@ -8,7 +8,7 @@ description: Build Pluto API endpoints with route metadata, thin HTTP handlers, 
 ## Do
 
 - Inspect the installed CLI, manifest schema and supported contracts before generating. Candidate APIs require explicit candidate dependencies; never invent a released version or silently migrate authored code.
-- Use `pluto add endpoint` and canonical manifest declarations. Pluto owns gates, entry adapters and registration; authored logic belongs at the generated private implementation extension point.
+- Use `pluto add endpoint` and canonical declarations. When the installed CLI supports managed gates, Pluto owns gates, entries and registration; authored logic uses private extension points. Otherwise preserve authored files and select an explicit candidate upgrade before relying on required-gate enforcement.
 - Keep HTTP, worker and tool entries limited to decoding, trusted caller adaptation, invoking the declared operation and mapping results. Reuse the operation gate across entry paths; do not reproduce its checks in each adapter.
 - Operations orchestrate authorization, scoped loading and commits through narrow ports. Domain code owns normalization, validated construction, calculations, resource decisions and lifecycle rules. Data owns persistence; infrastructure adapters own external delivery; composition injects dependencies.
 - Use `github.com/plutoframework/pluto-core/state` for explicit domain lifecycles; transitions evaluate facts without I/O.
