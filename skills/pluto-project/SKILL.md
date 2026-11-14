@@ -12,6 +12,8 @@ description: Initialize and configure Pluto applications using the CLI and pluto
 - Use the CLI for project/frontend initialization, endpoints, jobs, agents,
   state machines, components and auth UI. Inspect help/`--dry-run`; use explicit
   arguments with `--no-input`.
+- A `pluto.toml` with `kind = "frontend"` is a frontend-only repository; use
+  `pluto frontend`, `pluto fmt` and `pluto vet` there, not app generators.
 - Generate first; use supported authored extension points. Candidate blueprints
   own domain rules and operations; unsupported hooks require framework changes.
   Edit manifest-owned metadata in `pluto.toml`, then regenerate.
