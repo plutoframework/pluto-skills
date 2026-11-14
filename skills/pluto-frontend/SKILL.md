@@ -7,6 +7,7 @@ description: Build Pluto React features using configured UI libraries, TOML them
 
 ## Do
 
+- Frontends default to `web/` in the app. Optionally one lives in its own repository: `pluto.toml` has `kind = "frontend"` and `[frontend.api]` (backend OpenAPI path/URL, copied settings); the backend never references it. Create one only on request: `pluto frontend init --api ../backend`. After contract changes run `npm run api:generate`; fix `[frontend.api]` drift `pluto vet` reports.
 - Read the frontend profile in `pluto.toml`. Use `pluto frontend init` and supported `pluto frontend add` commands for components/auth UI; do not hand-recreate their scaffolds. Use the selected UI adapter and documented extension points.
 - Keep feature code together and cross feature boundaries through `public.ts`; put network access in feature query/mutation adapters.
 - Keep shared theme tokens in TOML and authored CSS overrides in the designated stylesheet; regenerate managed theme output.
@@ -20,6 +21,7 @@ description: Build Pluto React features using configured UI libraries, TOML them
 
 ## Don't
 
+- Do not convert between embedded and separate-repository layouts unless asked.
 - Do not hand-edit generated API/theme artifacts, import feature internals or bypass the configured UI library.
 - Do not confuse UI state/request IDs with backend domain state/idempotency keys.
 - Do not use client state for authorization or share controllers across server-rendered users.
